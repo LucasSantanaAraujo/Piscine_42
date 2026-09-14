@@ -1,6 +1,7 @@
 a.out
 *.o
 *.exe
+*.json
 rush00/rush00
 rush00/rush01
 rush00/rush02
