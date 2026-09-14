@@ -1,3 +1,15 @@
+/*
+
+• Escreva uma função que ordene um array de inteiros em ordem crescente.
+
+• Os parâmetros são um ponteiro para inteiro e o número de inteiros no array.
+
+• A função deverá ser prototipada da seguinte maneira:
+void ft_sort_int_tab(int *tab, int size);
+
+*/
+
+
 #include <stdio.h>
 
 void ft_sort_int_tab(int *tab, int size)

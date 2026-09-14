@@ -1,3 +1,14 @@
+/*
+
+• Escreva uma função que mostre todos os digitos, numa única linha, em ordem
+crescente.
+
+• Deve ser prototipada da seguinte maneira:
+void ft_print_numbers(void);
+
+*/
+
+
 #include <unistd.h>
 
 void ft_print_numbers(void) {

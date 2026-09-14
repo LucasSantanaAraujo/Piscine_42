@@ -1,3 +1,22 @@
+/*
+
+• Escreva uma função que mostre, em ordem crescente, todas as diferentes combinações 
+de três números diferentes em ordem crescente - sim, a repetição é intencional.
+
+• O resultado esperado seria:
+$>./a.out | cat -e
+
+012, 013, 014, 015, 016, 017, 018, 019, 023, ..., 789$>
+
+• 987 fica de fora porque 789 já está presente
+• 999 fica de fora porque o dígito 9 aparece mais de uma vez.
+
+• Deve ser prototipada da seguinte maneira:
+void ft_print_comb(void);
+
+*/
+
+
 #include <unistd.h>
 
 void ft_print_comb(void) {

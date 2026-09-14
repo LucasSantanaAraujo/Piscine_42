@@ -1,3 +1,14 @@
+/*
+
+• Escreva uma função que mostre o alfabeto em minúsculo, numa única linha, em
+ordem decrescente, começando pela letra ’z’.
+
+• Deve ser prototipada da seguinte maneira:
+void ft_print_reverse_alphabet(void);
+
+*/
+
+
 #include <unistd.h>
 
 void ft_print_reverse_alphabet(void) {
