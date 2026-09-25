@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_and_replace.c                               :+:      :+:    :+:   */
+/*   union.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucsanta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 15:04:41 by lucsanta          #+#    #+#             */
-/*   Updated: 2026/09/23 20:03:24 by lucsanta         ###   ########.fr       */
+/*   Created: 2026/09/24 10:57:23 by lucsanta          #+#    #+#             */
+/*   Updated: 2026/09/24 11:16:40 by lucsanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,32 @@
 
 int	main(int argc, char **argv)
 {
+	int	array[256] = {0};
 	int	i;
+	int	j;
 
 	i = 0;
-	if (argc == 4 && argv[2][1] == '\0' && argv[3][1] == '\0')
+	if (argc == 3)
 	{
-		while (argv[1][i] != '\0')
+		while (argv[1][i])
 		{
-			if (argv[1][i] == argv[2][0])
+			j = (unsigned char)argv[1][i];
+			if (array[j] == 0)
 			{
-				argv[1][i] = argv[3][0];
 				write(1, &argv[1][i], 1);
+				array[j] = 1;
 			}
-			else
-				write(1, &argv[1][i], 1);
+			i++;
+		}
+		i = 0;
+		while (argv[2][i])
+		{
+			j = (unsigned char)argv[2][i];
+			if (array[j] == 0)
+			{
+				write(1, &argv[2][i], 1);
+				array[j] = 1;
+			}
 			i++;
 		}
 	}

@@ -1,36 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_and_replace.c                               :+:      :+:    :+:   */
+/*   count_words.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucsanta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 15:04:41 by lucsanta          #+#    #+#             */
-/*   Updated: 2026/09/23 20:03:24 by lucsanta         ###   ########.fr       */
+/*   Created: 2026/09/24 11:52:20 by lucsanta          #+#    #+#             */
+/*   Updated: 2026/09/24 12:22:46 by lucsanta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	count_words(char *str)
 {
 	int	i;
+	int	count;
+	int	in_word;
 
 	i = 0;
-	if (argc == 4 && argv[2][1] == '\0' && argv[3][1] == '\0')
+	count = 0;
+	in_word = 0;
+	while (str[i])
 	{
-		while (argv[1][i] != '\0')
+		if (str[i] != ' ' && str[i] != '\t')
 		{
-			if (argv[1][i] == argv[2][0])
+			if (in_word == 0)
 			{
-				argv[1][i] = argv[3][0];
-				write(1, &argv[1][i], 1);
+				count++;
+				in_word = 1;
 			}
-			else
-				write(1, &argv[1][i], 1);
-			i++;
 		}
+		else
+			in_word = 0;
+		i++;
 	}
-	write(1, "\n", 1);
+	return (count);
+}
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d\n", count_words("hello    world"));
+	printf("%d\n", count_words(""));
+	printf("%d\n", count_words("    "));
+	printf("%d\n", count_words("  hello  world  "));
 	return (0);
 }
+*/
